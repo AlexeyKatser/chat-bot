@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :situaions
+  devise_for :users
   get 'chat/index'
+  root "chat#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

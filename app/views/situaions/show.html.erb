@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>S name:</strong>
+  <%= @situaion.s_name %>
+</p>
+
+<p>
+  <strong>S type:</strong>
+  <%= @situaion.s_type %>
+</p>
+
+<p>
+  <strong>S description:</strong>
+  <%= @situaion.s_description %>
+</p>
+
+<p>
+  <strong>S role:</strong>
+  <%= @situaion.s_role %>
+</p>
+
+<p>
+  <strong>S price:</strong>
+  <%= @situaion.s_price %>
+</p>
+
+<%= link_to 'Edit', edit_situaion_path(@situaion) %> |
+<%= link_to 'Back', situaions_path %>
