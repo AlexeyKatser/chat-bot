@@ -27,15 +27,30 @@
 
 
                                   <input type="text" name="city" data-conv-question="Здравствуйте, введите ваш город">
-	                                <%= select_tag  "multi[]", options_for_select(@situaions.map {|t| [ t.s_type ]}.uniq),  { :"data-conv-question" => "Выберите проблему из списка"} %>
-
-	                                <%= select_tag  "multi[]", options_from_collection_for_select(@situaions, "id", "s_name"),  { :"data-conv-question" => "Выберите проблему из списка"} %>
+	                                <%= select_tag "programmer", options_for_select(@situaions.pluck(:s_type).uniq),  {data: {"callback": "storeState", "conv-question": "Выберите проблему из списка", "conv-case": true}} %>
+	                                	<div data-conv-fork="programmer">
+	                                      <div data-conv-case="Аварийный вызов">
+	                                <%= select_tag  "multi[]", options_from_collection_for_select(@situaions.where(s_type: "Аварийный вызов"), "id", "s_name"),  { :"data-conv-question" => "Что у вас случилось?"} %>
 
 
 	                                <input type="text" name="name" data-conv-question=" Как вас зовут?">
 	                                <input type="text" name='address' data-conv-question=" {name}, какой у вас адрес?" >
 	                                <input type="text" name='phone' data-conv-question="  Введите номер телефона" >
 	                                <input type="text" name='w' data-conv-question=" " >
+	                                      </div>
+	                                 <div data-conv-case="Каталог услуг">
+		                                <%= select_tag  "multi[]", options_from_collection_for_select(@situaions.where(s_type: "Каталог услуг"), "id", "s_name"),  { :"data-conv-question" => "Что у вас случилось?"} %>
+
+
+	                                <input type="text" name="name" data-conv-question=" Как вас зовут?">
+	                                <input type="text" name='address' data-conv-question=" {name}, какой у вас адрес?" >
+	                                <input type="text" name='phone' data-conv-question="  Введите номер телефона" >
+	                                <input type="text" name='w' data-conv-question=" " >
+	                                      </div>
+	                                      </div>
+	                                    </div>
+
+
 
 	                            </form>
 	                        </div>
