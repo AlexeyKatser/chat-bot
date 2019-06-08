@@ -13,17 +13,11 @@
 <body>
 <!--Начало кода используемого для демонстрации -->
   <div id="controls">
-<div align=right><a class="close" title="Закрыть" onclick="document.getElementById('controls').style.display='none';">X</a></div>
-   <!-- Яндекс.Директ -->
-<div id="yandex_ad"></div>
+<div align=right><a class="close" title="Закрыть" onclick="document.getElementById('demo').style.display='none';">X</a></div>
+
 
 </div>
-<table cellpadding="0" cellspacing="0" id="demo_navi">
-  <tr>
-    <td width="220"><a href="/" rel="nofollow" ><div class="logo"><b><font color=#c3e425></font></b></div></a></td><td width="45"><div class="demo"></div></td>
-	<td style="text-overflow: ellipsis;"><a href="//rudebox.org.ua/how-to-create-chat-bot-for-site-on-js" class="go-bottom" rel="nofollow" ><div class="name">Как создать чат-бота для сайта на JS</div></a></td>
-  </tr>
-</table>
+
 	<section id="demo">
 	    <div class="vertical-align">
 	        <div class="container">
@@ -34,16 +28,15 @@
 	                            <form action="" method="GET" class="hidden">
 	                                <select data-conv-question="Здравствуйте! Я бот поддержки сайта Fokit.ru. Могу вам составить компанию, хотите поговорить? (Нужно выбрать ответ)" name="first-question">
 	                                    <option value="yes">Давай</option>
-	                                    <option value="sure">Конечно поболтаем!</option>
+
 	                                </select>	    
-	                                <%= 10.times do %>                        	
-	                                <select name="multi[]" data-conv-question="Какое пиво вы бы выпили сейчас жули?" multiple>
-	                                    <option value="Светлое">Светлое</option>
-	                                    <option value="Темное">Темное</option>
-	                                    <option value="Крафтовое">Крафтовое</option>
-	                                    <option value="Лимонадика бы (нет)">Лимонадика бы (нет)</option>
-	                                </select>
-	                                <% end %>
+
+
+
+
+	                                <input type="text" name="name" data-conv-question="Тогда поехали! Сначала скажите Ваше имя, пожалуйста.| Хорошо! Как мне к Вам обращаться?">
+	                                <input type="text" data-conv-question="Ну здравствуйте, здравствуйте, {name}:0! Выпьем за знакомство!" data-no-answer="true">
+	                
 	                            </form>
 	                        </div>
 	                    </div>
@@ -52,9 +45,7 @@
 	        </div>
 	    </div>
 	</section>
-	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
-	<script type="text/javascript" src="dist/autosize.min.js"></script>
-	<script type="text/javascript" src="dist/jquery.convform.js"></script>
+
 
 	<script>
 		function google() {
