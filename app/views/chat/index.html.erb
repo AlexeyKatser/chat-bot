@@ -32,6 +32,7 @@
 	                                </select>	    
 
 
+	                                <%= select_tag  "multi[]", options_from_collection_for_select(@situaions, "id", "s_name"),  { :"data-conv-question" => "Выберите проблему из списка"} %>
 
 
 	                                <input type="text" name="name" data-conv-question="Тогда поехали! Сначала скажите Ваше имя, пожалуйста.| Хорошо! Как мне к Вам обращаться?">

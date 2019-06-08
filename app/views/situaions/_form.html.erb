@@ -1,0 +1,42 @@
+<%= form_with(model: situaion, local: true) do |form| %>
+  <% if situaion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(situaion.errors.count, "error") %> prohibited this situaion from being saved:</h2>
+
+      <ul>
+      <% situaion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :s_name %>
+    <%= form.text_field :s_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_type %>
+    <%= form.text_field :s_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_description %>
+    <%= form.text_field :s_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_role %>
+    <%= form.text_field :s_role %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_price %>
+    <%= form.text_field :s_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

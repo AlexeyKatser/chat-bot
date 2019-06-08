@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :situaions
   devise_for :users
   get 'chat/index'
   root "chat#index"
