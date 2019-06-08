@@ -11,9 +11,7 @@
 	<link media="screen" href="demo.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<!--Начало кода используемого для демонстрации -->
-  <div id="controls">
-<div align=right><a class="close" title="Закрыть" onclick="document.getElementById('demo').style.display='none';">X</a></div>
+
 
 
 </div>
@@ -26,18 +24,19 @@
 	                    <div class="card no-border">
 	                        <div id="chat" class="conv-form-wrapper">
 	                            <form action="" method="GET" class="hidden">
-	                                <select data-conv-question="Здравствуйте! Я бот поддержки сайта Fokit.ru. Могу вам составить компанию, хотите поговорить? (Нужно выбрать ответ)" name="first-question">
-	                                    <option value="yes">Давай</option>
 
-	                                </select>	    
 
+                                  <input type="text" name="city" data-conv-question="Здравствуйте, введите ваш город">
+	                                <%= select_tag  "multi[]", options_for_select(@situaions.map {|t| [ t.s_type ]}.uniq),  { :"data-conv-question" => "Выберите проблему из списка"} %>
 
 	                                <%= select_tag  "multi[]", options_from_collection_for_select(@situaions, "id", "s_name"),  { :"data-conv-question" => "Выберите проблему из списка"} %>
 
 
-	                                <input type="text" name="name" data-conv-question="Тогда поехали! Сначала скажите Ваше имя, пожалуйста.| Хорошо! Как мне к Вам обращаться?">
-	                                <input type="text" data-conv-question="Ну здравствуйте, здравствуйте, {name}:0! Выпьем за знакомство!" data-no-answer="true">
-	                
+	                                <input type="text" name="name" data-conv-question=" Как вас зовут?">
+	                                <input type="text" name='address' data-conv-question=" {name}, какой у вас адрес?" >
+	                                <input type="text" name='phone' data-conv-question="  Введите номер телефона" >
+	                                <input type="text" name='w' data-conv-question=" " >
+
 	                            </form>
 	                        </div>
 	                    </div>
